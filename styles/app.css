@@ -1,0 +1,94 @@
+/* reset css */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+start project
+*/
+
+body {
+  font-family: sans-serif;
+  background: linear-gradient(315deg, #fff 0, #d7e1ec 75%);
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  flex-wrap: wrap;
+}
+.media-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+}
+.media-box:hover {
+  border: 6px solid #fff;
+  border-radius: 100%;
+  margin: -6px;
+}
+.media-box:hover div.box-tooltip {
+  opacity: 1;
+  top: -80px;
+}
+.box-tooltip {
+  background-color: #3b5999;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5rem;
+  top: 80px;
+  margin-bottom: 1.5rem;
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.box-tooltip::before {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #3b5999;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  bottom: -12px;
+}
+.svg-icon {
+  background: #fff;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 100%;
+  padding: 2rem;
+  transition: all 0.4s;
+  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
+}
+.svg-icon:hover {
+  background-color: #3b5999;
+  stroke: #fff;
+}
+
+@media screen and (max-width: 415px) {
+  .container {
+    margin:5rem;
+  }
+}
